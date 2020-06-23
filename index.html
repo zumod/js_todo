@@ -1,21 +1,24 @@
-<!DOCTYPE html>
-<html lang="eng">
+<html>
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-    <meta http-equiv="x-UA-Compatible" content="ie=edge" />
-    <title>Todo App</title>
+    <title>Page Title</title>        
 </head>
 
 <body>
-    <div id='fields'>
-        <div>
-            <input />
-            <input type="submit" value="Add" class="add-new" /><br /><br />
-        </div>
-    </div>
-    <script src="index.js"></script>
+    <div>
+        <input type="text">
+        <button onclick="addItem(this)">Add</button>
+    </div>
+    <script type="text/javascript">
+
+            function addItem(arg){
+                    arg.parentNode.insertAdjacentHTML('afterend', '<div><input type="text"> <button onclick="addItem(this)">Add</button><button onclick="removeItem(this)">Remove</button></div>');
+            }
+            function removeItem(arg){
+                    arg.parentNode.parentNode.removeChild(arg.parentNode);
+            }
+
+    </script>
 </body>
 
 </html>
